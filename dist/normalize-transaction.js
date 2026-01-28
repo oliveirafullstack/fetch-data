@@ -1,3 +1,4 @@
+import { convertToNumber } from "./convert-to-number.js";
 export function normalizeTransaciton(transaction) {
     return {
         nome: transaction.Nome,
@@ -6,7 +7,7 @@ export function normalizeTransaciton(transaction) {
         status: transaction.Status,
         email: transaction.Email,
         moeda: transaction["Valor (R$)"],
-        valor: 0,
+        valor: convertToNumber(transaction["Valor (R$)"]),
         pagamento: transaction["Forma de Pagamento"],
         novo: Boolean(transaction["Cliente Novo"]),
     };

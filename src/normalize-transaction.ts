@@ -1,3 +1,5 @@
+import { convertToNumber } from "./convert-to-number.js"
+
 declare global {
   type TransacaoPagamento = "Cartão de Credito" | "Boleto";
   type TransacaoStatus =
@@ -13,7 +15,7 @@ declare global {
     Status: TransacaoStatus;
     Email: string;
     ["Cliente Novo"]: number;
-    ["Valor (R$)"]: String;
+    ["Valor (R$)"]: string;
     ["Forma de Pagamento"]: TransacaoPagamento;
   }
 }
@@ -25,7 +27,7 @@ interface Transaction {
   dtatus: TransacaoStatus;
   email: string;
   moeda: string;
-  valor: number | null;
+  valor: number | null
   pagamento: TransacaoPagamento;
   novo: boolean;
 }
@@ -38,7 +40,7 @@ export function normalizeTransaciton(transaction: TransacaoAPI) {
     status: transaction.Status,
     email: transaction.Email,
     moeda: transaction["Valor (R$)"],
-    valor: 0,
+    valor: convertToNumber(transaction["Valor (R$)"]),
     pagamento: transaction["Forma de Pagamento"],
     novo: Boolean(transaction["Cliente Novo"]),
   };

@@ -1,0 +1,1 @@
+{"version":3,"file":"convert-to-number.js","sourceRoot":"","sources":["../src/convert-to-number.ts"],"names":[],"mappings":"AAGA,MAAM,UAAU,eAAe,CAAC,KAAa;IAC7C,MAAM,MAAM,GAAI,MAAM,CAAC,KAAK,CAAC,UAAU,CAAC,GAAG,EAAE,EAAE,CAAC,CAAC,OAAO,CAAC,GAAG,EAAE,GAAG,CAAC,CAAC,CAAC;IACpE,OAAO,KAAK,CAAC,MAAM,CAAC,CAAC,CAAC,CAAG,IAAI,CAAC,CAAC,CAAC,MAAM,CAAC;AACvC,CAAC"}

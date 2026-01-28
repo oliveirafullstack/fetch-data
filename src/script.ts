@@ -8,7 +8,7 @@ async function handleData() {
   if (!data) return;
 
   const transactions = data.map(normalizeTransaciton);
-  console.log(transactions);
+  
 }
 
 handleData();
