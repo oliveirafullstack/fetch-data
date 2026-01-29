@@ -1,4 +1,5 @@
-import { convertToNumber } from "./convert-to-number.js"
+import { convertToNumber } from "./convert-to-number.js";
+import { stringToDate } from "./string-to-date.js";
 
 declare global {
   type TransacaoPagamento = "Cartão de Credito" | "Boleto";
@@ -27,7 +28,7 @@ interface Transaction {
   dtatus: TransacaoStatus;
   email: string;
   moeda: string;
-  valor: number | null
+  valor: number | null;
   pagamento: TransacaoPagamento;
   novo: boolean;
 }
@@ -36,7 +37,7 @@ export function normalizeTransaciton(transaction: TransacaoAPI) {
   return {
     nome: transaction.Nome,
     id: transaction.ID,
-    data: transaction.Data,
+    data: stringToDate(transaction.Data),
     status: transaction.Status,
     email: transaction.Email,
     moeda: transaction["Valor (R$)"],

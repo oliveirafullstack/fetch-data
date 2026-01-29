@@ -1,9 +1,10 @@
 import { convertToNumber } from "./convert-to-number.js";
+import { stringToDate } from "./string-to-date.js";
 export function normalizeTransaciton(transaction) {
     return {
         nome: transaction.Nome,
         id: transaction.ID,
-        data: transaction.Data,
+        data: stringToDate(transaction.Data),
         status: transaction.Status,
         email: transaction.Email,
         moeda: transaction["Valor (R$)"],
