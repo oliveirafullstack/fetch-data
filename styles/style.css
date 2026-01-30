@@ -29,4 +29,5 @@ table {
 
 div {
   border-top: 3px solid goldenrod;
+  width: calc(880px);
 }
