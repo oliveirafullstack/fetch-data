@@ -1,0 +1,32 @@
+body {
+  margin-inline: auto;
+  max-width: 960px;
+}
+
+h2 {
+  padding-top: 1rem;
+  width: 100%;
+  max-width: calc(880px - 1rem);
+  border-top: 6px solid rebeccapurple;
+}
+
+h2,
+p {
+  margin-left: 1rem;
+}
+
+table {
+  border-spacing: 0;
+  text-align: left;
+  & td,
+  th {
+    padding: 0.5rem 1rem;
+  }
+  & tr:nth-child(even) {
+    background-color: ghostwhite;
+  }
+}
+
+div {
+  border-top: 3px solid goldenrod;
+}

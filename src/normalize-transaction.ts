@@ -19,21 +19,20 @@ declare global {
     ["Valor (R$)"]: string;
     ["Forma de Pagamento"]: TransacaoPagamento;
   }
-}
 
-interface Transaction {
-  nome: string;
-  id: number;
-  data: string;
-  dtatus: TransacaoStatus;
-  email: string;
-  moeda: string;
-  valor: number | null;
-  pagamento: TransacaoPagamento;
-  novo: boolean;
+  interface Transaction {
+    nome: string;
+    id: number;
+    data: Date;
+    status: TransacaoStatus;
+    email: string;
+    moeda: string;
+    valor: number | null;
+    pagamento: TransacaoPagamento;
+    novo: boolean;
+  }
 }
-
-export function normalizeTransaciton(transaction: TransacaoAPI) {
+export function normalizeTransaciton(transaction: TransacaoAPI): Transaction {
   return {
     nome: transaction.Nome,
     id: transaction.ID,
