@@ -24,17 +24,23 @@ function fillInTheList(list: CountList, containerId: string): void {
 
 function fillInStatistics(transactions: Transaction[]): void {
   const statistic = new Statistics(transactions);
+  console.log(statistic);
+
   fillInTheList(statistic.payment, "payment");
   fillInTheList(statistic.status, "status");
-
-  console.log(statistic.payment);
-
   const totalElement = document.querySelector<HTMLElement>("#total span");
   if (totalElement) {
     totalElement.innerText = statistic.total.toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL",
     });
+  }
+  const dayElement = document.querySelector<HTMLElement>("#day span");
+  if (dayElement) {
+    dayElement.innerText = statistic.bestDay[0].replace(
+      "tuesday",
+      "Terca-feira",
+    );
   }
   console.log(statistic.total);
 }
